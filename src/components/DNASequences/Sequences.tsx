@@ -54,12 +54,8 @@ const Sequences: FC<Props> = ({
   };
 
   useEffect(() => {
-    setChunkedPrimarySequence(
-      chunkArray(primarySequence, slotsCount as number)
-    );
-    setChunkedSecondarySequence(
-      chunkArray(secondarySequence, slotsCount as number)
-    );
+    setChunkedPrimarySequence(chunkArray(primarySequence, slotsCount));
+    setChunkedSecondarySequence(chunkArray(secondarySequence, slotsCount));
   }, [slotsCount, primarySequence]);
 
   useEffect(() => {
@@ -88,7 +84,7 @@ const Sequences: FC<Props> = ({
   return (
     <div
       className="sequences_container"
-      ref={resizeRef as React.Ref<HTMLDivElement>}
+      ref={resizeRef}
       onMouseUp={handleSelectionChange}
     >
       <div className="sequences">

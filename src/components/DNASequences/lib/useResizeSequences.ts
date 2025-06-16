@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
-const useResizeSequences = () => {
+const useResizeSequences = (): [
+  React.RefObject<HTMLDivElement | null>,
+  number
+] => {
   const ITEM_WIDTH = 50;
 
-  const sequencesRef = useRef<HTMLDivElement | undefined>(null);
+  const sequencesRef = useRef<HTMLDivElement>(null);
 
   const [sequencesWidth, setSequencesWidth] = useState(window.innerWidth - 50);
 
