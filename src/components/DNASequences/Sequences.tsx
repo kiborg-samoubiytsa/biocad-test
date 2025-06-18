@@ -47,9 +47,7 @@ const Sequences: FC<Props> = ({
     const result = [];
     for (let i = 0; i < array.length; i += chunkSize) {
       result.push(array.slice(i, i + chunkSize));
-      console.log(result);
     }
-    console.log(result, chunkSize);
     return result;
   };
 
@@ -58,9 +56,7 @@ const Sequences: FC<Props> = ({
     setChunkedSecondarySequence(chunkArray(secondarySequence, slotsCount));
   }, [slotsCount, primarySequence]);
 
-  useEffect(() => {
-    console.log(chunkedPrimarySequence.length);
-  }, [chunkedPrimarySequence]);
+  useEffect(() => {}, [chunkedPrimarySequence]);
 
   useEffect(() => {
     (async () => {
